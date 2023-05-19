@@ -24,5 +24,5 @@ Estudando Java :coffee:.
 
 
 ## 🛠 Habilidades
-JAVA,KOTLIN, HTML, CSS , SQL
+JAVA
 
