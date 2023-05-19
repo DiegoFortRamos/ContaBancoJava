@@ -3,7 +3,7 @@
 
 Projeto criado para colocar em prática os conceitos de orientação a objetos em Java.
 
-
+> STATUS DO PROJETO : EM DESENVOLVIMENTO
 
 
 ## Funcionalidades
