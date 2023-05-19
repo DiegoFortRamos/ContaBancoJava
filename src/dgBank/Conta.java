@@ -1,6 +1,6 @@
-package conta;
+package dgBank;
 
-public class Conta {
+public class Conta extends Cliente {
 
     private String titular;
     private int numeroConta;
