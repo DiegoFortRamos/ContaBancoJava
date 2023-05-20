@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MenuInicial extends Conta {
 
 
-    public void funcionalidadeBanco(Conta conta, Conta destino, double valor){
+    public void funcionalidadeBanco(Conta conta, Conta destino){
         System.out.println("================================\n");
         System.out.println("           DG BANK              \n");
         System.out.println("================================\n");
@@ -32,14 +32,14 @@ public class MenuInicial extends Conta {
 
                    if (acao == 1){
                        System.out.println("SACANDO......");
-                       conta.saca(valor);
+                       conta.saca();
 
                    }else if (acao == 2){
                        System.out.println("Transferindo......");
-                       conta.transfere(valor,destino);
+                       conta.transfere(destino);
                    }else if (acao == 3){
                        System.out.println("Depositando");
-                       conta.deposita(valor);
+                       conta.deposita();
                    }else if (acao == 4 ){
                        conta.getSaldo();
                    } else{

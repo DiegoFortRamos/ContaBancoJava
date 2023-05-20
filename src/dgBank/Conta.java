@@ -1,5 +1,7 @@
 package dgBank;
 
+import java.util.Scanner;
+
 public class Conta extends Cliente {
 
     private String titular;
@@ -7,7 +9,7 @@ public class Conta extends Cliente {
     private int agencia;
     private  double saldo = 100;
 
-
+    Scanner entrada = new Scanner(System.in);
     @Override
     public void mostraDadosCliente() {
         super.mostraDadosCliente();
@@ -20,7 +22,10 @@ public class Conta extends Cliente {
 
     }
 
-    public void deposita(double valor){
+    public void deposita(){
+        System.out.println("Qual valor deseja Depositar :  ");
+        double valor = entrada.nextDouble();
+
         if (valor < 0) {
             System.out.println("Valor não permitido!!");
         }else{
@@ -31,7 +36,10 @@ public class Conta extends Cliente {
     }
 
 
-    public void saca(double valor ){
+    public void saca(){
+        System.out.println("Qual valor deseja sacar :  ");
+        double valor = entrada.nextDouble();
+
         if(valor < 0 ){
             System.out.println("Valor não permitido!!");
         }else if (valor <= this.saldo) {
@@ -43,10 +51,12 @@ public class Conta extends Cliente {
         }
     }
 
-    public void transfere(double valor , Conta destino){
+    public void transfere( Conta destino){
+        System.out.println("Qual valor deseja sacar :  ");
+        double valor = entrada.nextDouble();
         if(valor <= this.saldo){
             this.saldo -= valor;
-            destino.deposita(valor);
+            destino.setSaldo(valor);
             this.getTitular();
             this.getSaldo();
             destino.getTitular();
