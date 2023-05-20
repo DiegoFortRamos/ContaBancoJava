@@ -17,7 +17,7 @@ public class MenuInicial extends Conta {
         Scanner entrada = new Scanner(System.in);
 
 
-        System.out.printf("Bem vindo senhor %s /n",conta.getNome());
+        System.out.printf("Bem vindo senhor %s \n",conta.getNome());
         System.out.println("Escolha uma opção \n");
         System.out.println("[1] Entrar [2] Sair");
 

@@ -1,18 +1,15 @@
 import  dgBank.Conta;
+import menu.CadastraFuncionario;
 import menu.MenuInicial;
 
 public class Main {
     public static void main(String[] args) {
         Conta conta01 = new Conta();
-        conta01.setNome("Diego");
-        conta01.setTitular("Diego Ramos");
+        CadastraFuncionario cadastraFuncionario = new CadastraFuncionario();
+        cadastraFuncionario.cadastraFuncionario(conta01,"Diego","Rj","1254254125","Dev",
+                1998,1,01);
 
-        Conta conta02 = new Conta();
-        conta02.setNome("Ana");
 
-        MenuInicial menu = new MenuInicial();
-
-        menu.funcionalidadeBanco(conta01,conta02,50);
 
 
     }

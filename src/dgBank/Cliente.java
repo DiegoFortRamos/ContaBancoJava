@@ -9,28 +9,40 @@ public class Cliente {
 
 
     public void mostraDadosCliente(){
-        System.out.printf("Nome : %s \nEndereco :  \nCpf : \nProfissão :  \nAno de Nascimento   "
-                ,getNome(), getEndereco(),getCpf(),getProfissao(),getAnoNascimento());
+        System.out.println("\n=======================");
+        System.out.println("     Dados Cliente    ");
+        System.out.println("=======================");
+        getNome();
+        getEndereco();
+        getCpf();
+        getProfissao();
+        getAnoNascimento();
+
     }
 
 
     public String getNome(){
+        System.out.printf("\nNome : %s\n",nome);
         return nome;
     }
 
     public String getEndereco(){
+        System.out.printf("\nEndereco : %s\n",endereco);
         return endereco;
     }
 
     public String getCpf(){
+        System.out.printf("\nCpf : %s\n",cpf);
         return cpf;
     }
 
     public String getProfissao(){
+        System.out.printf("\nProfissão : %s\n",profissao);
         return profissao;
     }
 
     public  int getAnoNascimento(){
+        System.out.printf("\nAno de Nascimento : %s\n\n",anoNascimento);
         return anoNascimento;
     }
 
@@ -48,11 +60,11 @@ public class Cliente {
         this.profissao = profissao;
     }
 
-    public  void setCpf(){
+    public  void setCpf(String cpf){
         this.cpf = cpf;
     }
 
-    public  void setAnoNascimento(){
+    public  void setAnoNascimento(int anoNascimento){
         this.anoNascimento = anoNascimento;
     }
 }

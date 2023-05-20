@@ -8,6 +8,54 @@ public class Conta extends Cliente {
     private  double saldo = 100;
 
 
+    @Override
+    public void mostraDadosCliente() {
+        super.mostraDadosCliente();
+        System.out.println("=======================");
+        System.out.println("     Dados Bancarios    ");
+        System.out.println("=======================");
+        getTitular();
+        getNumeroConta();
+        getAgencia();
+
+    }
+
+    public void deposita(double valor){
+        if (valor < 0) {
+            System.out.println("Valor não permitido!!");
+        }else{
+            this.saldo += valor;
+            this.getSaldo();
+
+        }
+    }
+
+
+    public void saca(double valor ){
+        if(valor < 0 ){
+            System.out.println("Valor não permitido!!");
+        }else if (valor <= this.saldo) {
+            this.saldo -= valor;
+            this.getSaldo();
+
+        }else{
+            System.out.println("Valor insuficiente");
+        }
+    }
+
+    public void transfere(double valor , Conta destino){
+        if(valor <= this.saldo){
+            this.saldo -= valor;
+            destino.deposita(valor);
+            this.getTitular();
+            this.getSaldo();
+            destino.getTitular();
+            destino.getSaldo();
+        }else if (valor > this.saldo) {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
     public void setTitular(String titular){
         if(titular == ""){
             System.out.println("Por favor digite um nome valido!!");
@@ -31,15 +79,17 @@ public class Conta extends Cliente {
 
 
     public String  getTitular(){
-        System.out.printf("titular : %s",titular);
+        System.out.printf("Titular : %s\n",titular);
         return this.titular;
     }
 
     public int getNumeroConta() {
+        System.out.printf("\nNúmero da Conta : %s\n",numeroConta);
         return this.numeroConta;
     }
 
     public int getAgencia(){
+        System.out.printf("\nAgência  : %s\n",agencia);
         return this.agencia;
     }
 
@@ -49,39 +99,5 @@ public class Conta extends Cliente {
     }
 
 
-   public void deposita(double valor){
-        if (valor < 0) {
-            System.out.println("Valor não permitido!!");
-        }else{
-            this.saldo += valor;
-            this.getSaldo();
 
-        }
-    }
-
-
-   public void saca(double valor ){
-        if(valor < 0 ){
-            System.out.println("Valor não permitido!!");
-        }else if (valor <= this.saldo) {
-            this.saldo -= valor;
-            this.getSaldo();
-
-        }else{
-            System.out.println("Valor insuficiente");
-        }
-    }
-
-   public void transfere(double valor , Conta destino){
-        if(valor <= this.saldo){
-            this.saldo -= valor;
-            destino.deposita(valor);
-            this.getTitular();
-            this.getSaldo();
-            destino.getTitular();
-            destino.getSaldo();
-        }else if (valor > this.saldo) {
-            System.out.println("Saldo insuficiente");
-        }
-    }
 }
