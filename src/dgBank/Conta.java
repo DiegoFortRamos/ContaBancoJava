@@ -5,7 +5,7 @@ public class Conta extends Cliente {
     private String titular;
     private int numeroConta;
     private int agencia;
-    private  double saldo;
+    private  double saldo = 100;
 
 
     public void setTitular(String titular){
@@ -54,6 +54,7 @@ public class Conta extends Cliente {
             System.out.println("Valor não permitido!!");
         }else{
             this.saldo += valor;
+            this.getSaldo();
 
         }
     }
@@ -64,6 +65,7 @@ public class Conta extends Cliente {
             System.out.println("Valor não permitido!!");
         }else if (valor <= this.saldo) {
             this.saldo -= valor;
+            this.getSaldo();
 
         }else{
             System.out.println("Valor insuficiente");
