@@ -10,7 +10,7 @@ public class Conta extends Cliente {
 
     public void setTitular(String titular){
         if(titular == ""){
-            System.out.println("Por favor digite um número valido!!");
+            System.out.println("Por favor digite um nome valido!!");
         }else{
             this.titular = titular;
             System.out.printf("Seja bem vindo %s  ",titular);
@@ -25,8 +25,13 @@ public class Conta extends Cliente {
         this.agencia = agencia;
     }
 
+    public void setSaldo(double valor){
+        this.saldo = saldo;
+    }
 
-    public String  getTitular(String titular){
+
+    public String  getTitular(){
+        System.out.printf("titular : %s",titular);
         return this.titular;
     }
 
@@ -39,7 +44,7 @@ public class Conta extends Cliente {
     }
 
     public double getSaldo(){
-        System.out.printf(" %s  Seu saldo atual é : R$ %.0f \n",titular,saldo);
+        System.out.printf("   Seu saldo atual é : R$ %.0f \n",saldo);
         return  this.saldo;
     }
 
@@ -49,7 +54,7 @@ public class Conta extends Cliente {
             System.out.println("Valor não permitido!!");
         }else{
             this.saldo += valor;
-            getSaldo();
+
         }
     }
 
@@ -59,20 +64,22 @@ public class Conta extends Cliente {
             System.out.println("Valor não permitido!!");
         }else if (valor <= this.saldo) {
             this.saldo -= valor;
-            getSaldo();
+
         }else{
             System.out.println("Valor insuficiente");
         }
     }
 
    public void transfere(double valor , Conta destino){
-        if(valor > this.saldo){
-            System.out.println("Saldo insuficiente!!");
-        }else {
+        if(valor <= this.saldo){
             this.saldo -= valor;
             destino.deposita(valor);
+            this.getTitular();
+            this.getSaldo();
+            destino.getTitular();
             destino.getSaldo();
-            getSaldo();
+        }else if (valor > this.saldo) {
+            System.out.println("Saldo insuficiente");
         }
     }
 }
