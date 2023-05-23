@@ -2,12 +2,12 @@ package dgBank;
 
 import java.util.Scanner;
 
-public class Conta extends Cliente {
+public class Conta extends Cliente implements AcoesDaConta {
 
     private String titular;
     private int numeroConta;
     private int agencia;
-    private  double saldo = 100;
+    private  double saldo;
 
     Scanner entrada = new Scanner(System.in);
     @Override
@@ -52,11 +52,11 @@ public class Conta extends Cliente {
     }
 
     public void transfere( Conta destino){
-        System.out.println("Qual valor deseja sacar :  ");
+        System.out.println("Qual valor deseja transferir :  ");
         double valor = entrada.nextDouble();
         if(valor <= this.saldo){
             this.saldo -= valor;
-            destino.setSaldo(valor);
+            destino.transfereDeposita(valor);
             this.getTitular();
             this.getSaldo();
             destino.getTitular();
@@ -109,5 +109,8 @@ public class Conta extends Cliente {
     }
 
 
-
+    @Override
+    public double transfereDeposita(double valor) {
+        return this.saldo += valor;
+    }
 }

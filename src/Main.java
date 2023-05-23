@@ -16,7 +16,7 @@ public class Main {
 
         MenuInicial menuInicial = new MenuInicial();
 
-        menuInicial.funcionalidadeBanco(conta01,conta02);
+        menuInicial.funcionalidadeBanco(conta02,conta01);
 
 
     }

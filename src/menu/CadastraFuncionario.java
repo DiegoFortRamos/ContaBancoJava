@@ -21,7 +21,7 @@ public class CadastraFuncionario extends MenuInicial {
         conta.setNumeroConta(numeroConta);
         conta.setAgencia(agencia);
 
-        System.out.println("Deseja ver os Dados Cadastrados ? [1] Sim [2] Não");
+        System.out.println("Deseja ver os dados cadastrados ? [1] Sim [2] Não");
         int opcao = entrada.nextInt();
         while (true) {
             if (opcao == 1){
